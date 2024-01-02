@@ -1,0 +1,38 @@
+/* pc用。画面幅が401px以上の時にスタイルが適用される */
+@media screen and (min-width: 1001px){
+  #plof-sp img{
+    display: none;
+  }
+
+  .ploftxt-2{
+    position: relative;
+    top: -300px;
+    left: 50px;
+  }
+}
+
+/* sp用。画面幅が400px以下の時にスタイルが適用する */
+@media screen and (max-width: 1000px){
+  #plof-pc img{
+    display: none;
+  }
+}
+
+.ttl {
+  margin: 100px auto 0 auto;
+}
+
+#plof-sp {
+  padding: 10px 10px 0px 10px;
+  text-align: center;
+}
+
+#plof-sp img {
+  border-radius: 50%;
+}
+
+
+.ploftxt-1,.ploftxt-2 {
+  text-align: center;
+  margin-top: 100px;
+}
