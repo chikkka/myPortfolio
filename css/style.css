@@ -1,0 +1,311 @@
+/* pc、sp共通 */
+html{
+  font-size: 30px;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Kiwi Maru', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
+  color: #4d320f;
+  /* 画面幅から見切れたものを隠す（x軸） */
+  overflow-x: hidden;
+}
+
+/* トップロゴとハンバーガーメニューは一番表にくるようにする */
+.logo,#hum-icon,#hum-nav{
+  z-index: 100;
+}
+
+/* ハンバーガーメニューのナビゲーション、レイアウトと非表示設定 */
+#hum-nav{
+  background-color: antiquewhite;
+  padding-top: 30px;
+  position: fixed;
+  right: 0;
+  top: 70px;
+  height:15rem;
+  width: 10rem;
+  max-width: 200px;
+  /* 基本はナビゲーションは閉じておくようにする */
+  display: none;
+}
+
+.menu {
+  /* ナビゲーションリンクをブロックレベル要素にする */
+  display: block;
+  background-color: #f5deb3;
+  padding: 10px 20px;
+  margin: 10px;
+  height: 44px;
+  font-size: 0.6rem;
+}
+
+/* ×ボタン */
+#close{
+  /* 親である#hum-navを基準にした絶対位置 
+   今回の場合#hum-navはposition-fixedになっているのでそれを基準とする */
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  width: 0.8rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+/* トップに戻る */
+#logo-sp{
+  width: 3.5rem;
+  height: 1rem;
+  display: block;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  margin-right: auto;
+  margin-left: auto; 
+}
+
+/* 未訪問のリンクにスタイルを適用する。擬似クラス */
+#hum-nav a:link{
+  color: #4d320f;
+}
+
+/* リンク訪問済みの場合にスタイルを適用する。 */
+#hum-nav a:visited{
+  color: #4d320f;
+}
+
+/* カーソルが乗っている時にスタイルを適用する */
+#hum-nav a:hover{
+  color: #ffffff;
+}
+
+.top-p{
+  /* top画像を中心に */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /* width: 100%; */
+}
+
+#top-pc{
+  /* pc用top画像を画面幅いっぱいにする */
+  /* width: 100%; */
+  /* margin: 80px 0 0 0; */
+  /* padding: 0; */
+}
+
+#top-sp{
+  margin-top: 150px;
+}
+
+a{
+  color: #4d320f;
+  /* リンクの下線を消す */
+  text-decoration: none;
+}
+
+a:hover{
+  /* カーソルが乗っている時に透明に近くなる */
+  opacity: 0.3;
+}
+
+ul{
+  /* ナビゲーションを横並びにする */
+  display: flex;
+}
+
+li{
+  width: 60px;
+  box-shadow: 4px 5px #f5deb3;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 10px;
+  /* 頭の•を消す */
+  list-style-type: none;
+  text-align: center;
+}
+
+li:hover{
+  cursor: pointer;
+}
+
+li:active{
+  background-color: #f5deb3;
+  box-shadow: 4px 5px antiquewhite;
+  transform: translateY(3px);
+}
+
+.ttl{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#blogsec section{
+  /* ブログ写真の大きさを相対的に変化させるためにwidthを設ける */
+  width: 12rem;
+  height: 12rem;
+  /* ブログの写真と記事を中央に寄せる */
+  text-align: center;
+  /* ブログとブログに上下の空きを作る */
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#blogsec h3{
+  font-size: 0.6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.blogtxt{
+  /* ブログの文章の文字設定 */
+  font-size: 0.5rem;
+  margin: 0;
+  padding: 5px;
+}
+
+.blogpic{
+  width: 8em; 
+  height: 8em; 
+}
+
+.more {
+  /* moreを中心に寄せるためにブロックレベル要素にする */
+  display: block;
+  background-color: #f5deb3;
+  width: 2rem;
+  height: 1rem;
+  margin: 0 auto;
+  font-size: 0.6rem;
+}
+
+/* 全ての要素を画面幅いっぱいにする */
+html,
+body,
+main,
+/* #blogsec section, */
+.top-p{
+  width: 100%;
+}
+
+#blogsec{
+  display: flex;
+}
+
+/* pc用。画面幅が760px以上の時にスタイルが適用される */
+@media screen and (min-width: 760px){
+  body{
+    /* min-width: 760px; */
+    min-width: 1366px; 
+    /* ↑これだとpcの画面幅を変えた時に 
+    画像が途中から小さくならずに画面幅に上手く対応してくれなかった。*/
+    box-sizing: border-box;
+  }
+
+  main{
+  /* pc用top画像の幅である1360pxよりも
+  親要素（main）が小さくならないようにする*/
+    /* min-width: 1360px; */
+    /* min-width: 760px; */
+  }
+
+  .logo{
+    font-size: 1rem;
+    width: 5.9rem;
+    height: 1.8rem;
+    border: solid 3px #4d320f;
+    background-color: #ffffff;
+    text-align: center;
+    position: fixed;
+    top: 70px;
+    left: 40px;
+  }
+
+  #hum-icon {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+
+  .nav-pc{
+    font-size: 0.6rem;
+  }
+
+  .nav-pc li{
+    width: 3rem;
+  }
+
+  /* スマホ用トップ画像を非表示にする */
+  #top-sp{
+    display: none;
+  }
+    /* pc幅になった時にブログ記事が横に並ぶようにするためにフレックスボックスを使う*/
+  #blogsec{
+    /* justify-content: center; */
+    justify-content: space-between;
+  }
+} 
+
+
+/* sp用。画面幅が759px以下の時にスタイルが適用する */
+@media screen and (max-width: 759px){
+  body{
+    min-width: 430px;
+    /* 両サイドに揺れないようにするため */
+    box-sizing: border-box;
+  }
+
+  main{
+      /* スマホ用top画像の幅である430pxよりも
+      小さくならない */
+    /* min-width: 430px; */
+  }
+
+  .logo{
+    font-size: 0.9rem;
+    width: 5rem;
+    height: 1.5rem;
+    border: solid 3px #4d320f;
+    background-color:#ffffff;
+    text-align: center;
+    position: fixed;
+    top: 70px;
+    left: 20px;
+  }
+
+  #hum-icon {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* sp幅になるとpc用ナビゲーションが隠れる */
+  .nav-pc{
+    display: none;
+  }
+
+  /* パソコン用のトップ画像を非表示にする */
+  #top-pc{
+    display: none;
+  }
+
+    /* pc幅になった時にブログ記事が横に並ぶようにするためにフレックスボックスを使う*/
+    #blogsec{
+      flex-wrap: wrap;
+    }
+}
