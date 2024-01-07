@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="私のポートフォリオ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scale=no">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/respon.css">
+    <title>.nekonote  お手伝いいたします</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Josefin+Sans:wght@300&family=Kiwi+Maru:wght@300&family=M+PLUS+Rounded+1c:wght@100&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <h1 class="logo">
+        <a href="index.html">.nekonote</a>
+      </h1>
+
+      <!-- ハンバーガーメニューのアイコン -->
+      <img id="hum-icon" src="./img/hum.png" alt="ナビゲーションを開く" onclick="document.getElementById('hum-nav').style.display = 'block'">
+
+      <!-- pc用ナビゲーション -->
+      <nav class="nav-pc">
+        <ul>
+          <li>
+            <a href="#works">works</a>
+          </li>
+          <li>
+            <a href="#blog">blog</a>
+          </li>
+          <li>
+            <a href="./about.html">about</a>
+          </li>
+          <li>
+            <a href="./contact.html">contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ハンバーガーナビ -->
+      <nav id="hum-nav"> 
+        <!-- ×でナビゲーションを閉じる -->
+        <img  id="close" src="./img/batsu.png" width="20px" height=""20px alt="ナビゲーションを閉じる" onclick="document.getElementById('hum-nav').style.display = 'none'">
+
+        <!-- トップに戻る -->
+        <a href="index.html" onclick="document.getElementById('hum-nav').style.display = 'none'">
+          <img id="toTop" src="./img/totop.png" alt="トップページに戻る">
+        </a>
+        <!-- worksをクリックするとworksに飛び、ナビゲーションが閉じる -->
+        <a class="menu" href="#works" onclick="document.getElementById('hum-nav').style.display = 'none'">
+        works</a>
+        <!-- blogをクリックするとblogに飛び、ナビゲーションが閉じる -->
+        <a class="menu" href="#blog" onclick="document.getElementById('hum-nav').style.display = 'none'">
+        blog</a>
+        <!-- abutをクリックするとabout.htmlに飛び、ナビゲーションが閉じる -->
+        <a class="menu" href="./about.html" onclick="document.getElementById('hum-nav').style.display = 'none'">
+        about</a>
+        <!-- contactをクリックするとcontactに飛び、ナビゲーションが閉じる -->
+        <a class="menu" href="./contact.html" onclick="document.getElementById('hum-nav').style.display = 'none'">
+        contact</a>
+      </nav>
+    </header>
+
+    <!-- main -->
+    <div id=main>
+
+      <!-- mainVisual -->
+      <div id="mainVisual">
+        <img id="pc" src="./img/top-pc.png" alt="ネコの手もかりたいを伊手伝いします">
+        <img id="sp" src="./img/top-sp.png" alt="ネコの手もかりたいをお手伝いします">
+      </div>
+
+      <!--works-->
+      <section id="works">
+        <h2 class="ttl">works</h2>
+        <ul class="worksList">
+          <li>
+            <p class="photo">
+              <a>
+                <img src="./img/blog_3.jpg" alt="">
+              </a>
+            </p>
+          </li>
+          <li>
+            <p class="photo">
+              <a>
+                <img src="./img/blog_3.jpg" alt="">
+              </a>
+            </p>
+          </li>
+          <li>
+            <p class="photo">
+              <a>
+                <img src="./img/blog_3.jpg" alt="">
+              </a>
+            </p>
+          </li>
+
+          <li>
+            <p class="photo">
+              <a>
+                <img src="./img/blog_3.jpg" alt="">
+              </a>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ブログ -->
+      <section id="blog">
+        <h2 class="ttl">blog</h2>
+        <ul>
+          <li>
+            <p class="blogPhoto">
+              <a href="">
+                <img src="./img/blog_3.jpg" alt="ねこの写真">
+              </a>
+            </p>
+            <p class="blogTxt">１久しぶり出会えたので少し遊んできた。</p>
+            <a href="./blog/blog.html" class="more">more</a>
+          </li>
+          <li>
+            <p class="blogPhoto">
+              <a href="">
+                <img src="./img/blog_3.jpg" alt="ねこの写真">
+              </a>
+            </p>
+            <p class="blogTxt">２久しぶり出会えたので少し遊んできた。</p>
+            <a href="./blog/blog.html" class="more">more</a>
+          </li>
+          <li>
+            <p class="blogPhoto">
+              <a href="">
+                <img src="./img/blog_3.jpg" alt="ねこの写真">
+              </a>
+            </p>
+            <p class="blogTxt">３久しぶり出会えたので少し遊んできた。</p>
+            <a href="./blog/blog.html" class="more">more</a>
+          </li>
+          <li>
+            <p class="blogPhoto">
+              <a href="">
+                <img src="./img/blog_3.jpg" alt="ねこの写真">
+              </a>
+            </p>
+            <p class="blogTxt">４久しぶり出会えたので少し遊んできた。</p>
+            <a href="./blog/blog.html" class="more">more</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+      <!-- footer -->
+    <footer>
+      <nav class="nav-pc">
+        <ul>
+          <li>
+            <a href="#works">works</a>
+          </li>
+          <li>
+            <a href="#blog">blog</a>
+          </li>
+          <li>
+            <a href="./about.html">about</a>
+          </li>
+          <li>
+            <a href="./contact.html">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
