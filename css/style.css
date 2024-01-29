@@ -1,0 +1,262 @@
+/* 全ての要素を画面幅いっぱいにする。
+デバイスごとに左右に揺れなくなる*/
+html,
+body, 
+header,
+#main,
+#mainVisual,
+#aboutTop,
+#contact,
+#contact form,
+#contact form div,
+.contact-heading,
+.contact-label,
+.contact-textbox,
+.contact-textarea{
+  width: 100%;
+  min-width: 300px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 30px;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Kiwi Maru', serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #faebd7;
+  color: #4d320f;
+  /* width=幅がpaddingとborderを含めたものになる */
+  box-sizing: border-box;
+  /* 画面幅から見切れたものを隠す（x軸） */
+  overflow-x: hidden;
+}
+
+/* ================ header =====================*/
+.logo{
+  font-size: 0.6rem;
+  width: 3.5rem;
+  height: 0.9rem;
+  border: solid 3px #4d320f;
+  background-color:#ffffff;
+  top: 60px;
+  left: 20px;
+  text-align: center;
+}
+
+/* トップロゴとハンバーガーメニューは一番表にくるようにする */
+.logo,#hum-icon,#hum-nav{
+  z-index: 100;
+}
+
+li, a{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#hum-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.nav-pc{
+  display: none;
+}
+
+.nav-pc ul{
+  /* ナビゲーションを横並びにする */
+  display: flex;
+}
+
+.nav-pc li:active{
+  background-color: #f5deb3;
+  box-shadow: 4px 5px #faebd7;
+  transform: translateY(3px);
+}
+
+/* -----ハンバーガーメニューのナビゲーション、
+    レイアウトと非表示設定 ------*/
+#hum-nav{
+  width: 10rem;
+  max-width: 200px;
+  height:15rem;
+  background-color: #faebd7;
+  position: fixed;
+  right: 0;
+  top: 70px;
+  padding-top: 30px;
+  /* 基本はナビゲーションは閉じておくようにする */
+  display: none;
+}
+
+.menu {
+  font-size: 0.6rem;
+  height: 44px;
+  background-color: #f5deb3;
+  /* ナビゲーションリンクをブロックレベル要素にする */
+  display: block;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+/* ×ボタン */
+#close{
+  width: 0.8rem;
+  height: 1rem;
+  /* 親である#hum-navを基準にした絶対位置 
+   今回の場合#hum-navはposition-fixedになっているのでそれを基準とする */
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  cursor: pointer;
+}
+
+/* トップに戻る */
+#toTop{
+  width: 3.5rem;
+  height: 1rem;
+  display: block;
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  margin-right: auto;
+  margin-left: auto; 
+}
+
+/* 未訪問のリンクにスタイルを適用する。擬似クラス */
+#hum-nav a:link{
+  color: #4d320f;
+}
+
+/* リンク訪問済みの場合にスタイルを適用する。 */
+#hum-nav a:visited{
+  color: #4d320f;
+}
+
+/* カーソルが乗っている時にスタイルを適用する */
+#hum-nav a:hover{
+  color: #ffffff;
+}
+
+li{
+  /* 頭の•を消す */
+  list-style-type: none;
+}
+
+header li, footer li{
+  width: 60px;
+  box-shadow: 4px 5px #f5deb3;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+
+a{
+  color: #4d320f;
+  /* リンクの下線を消す */
+  text-decoration: none;
+}
+
+a:hover{
+  /* カーソルが乗っている時に透明に近くなる */
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+
+/* =============== main ================== */
+#main{
+  width: 100%;
+  box-sizing: border-box;
+  /* 画面幅から見切れたものを隠す（x軸）*/
+  overflow-x: hidden;
+}
+
+#sp{
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  display: block;
+  margin: 50px auto 0 auto;
+
+}
+
+#pc{
+  display: none;
+}
+
+.ttl{
+  font-size: 1.2rem;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* -----------works-blog---------- */
+#works ,#blog{
+  margin-bottom:70px;
+}
+
+#works ul, #blog ul{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#works li, #blog li{
+  width: 280px;
+  height: auto;
+  padding: 0 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+#works li:last-child {
+	margin-bottom: 0;
+}
+
+#works img, #blog img{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* -----------blog only--------- */
+.blogPhoto{
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.blogTxt{
+  font-size: 0.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.more {
+  font-size: 0.4rem;
+  background-color: #f5deb3;
+  border-radius: 6px;
+  display: block;
+  width: 2rem;
+  margin: auto;
+  text-align: center;
+}
